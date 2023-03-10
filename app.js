@@ -25,13 +25,15 @@ console.log(oddNumbers)
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 
-const numbersSmallerThan501 = crazyNumbers.filter(number => {
+const numbersLessThan501 = crazyNumbers.reduce((acc, number) => {
   if (number < 501) {
-    return number
+    return acc + 1
   }
-})
 
-console.log(numbersSmallerThan501)
+  return acc
+}, 0)
+
+console.log(numbersLessThan501)
 
 /*
   03

@@ -26,14 +26,14 @@ console.log(oddNumbers)
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 
 const numbersLessThan501 = crazyNumbers.reduce((acc, number) => {
-  if (number < 501) {
-    return acc + 1
-  }
+  return number < 501 ? acc + 1 : acc
+  // if (number < 501) {
+  //   return acc + 1
+  // }
 
-  return acc
+  // return acc
 }, 0)
 
-console.log(numbersLessThan501)
 
 /*
   03
@@ -46,7 +46,7 @@ console.log(numbersLessThan501)
 
 const numbers = [5, 7, 3]
 
-const numbersSquared = numbers.map(number => number * number)
+const numbersSquared = numbers.map(number => number ** 2)
 
 console.log(numbersSquared)
 
@@ -71,13 +71,7 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
-const moviesBefore2000 = tarantinoMovies.filter(movie => {
-  if ( movie.release < 2000 ) { 
-    return movie
-  }
-})
-
-console.log(moviesBefore2000)
+const moviesBefore2000 = tarantinoMovies.filter(movie => movie.release < 2000)
 
 /*
   05
@@ -119,7 +113,8 @@ const cart = [
 ]
 
 const listNameGames = cart.reduce((acc, item) => {
-  acc = acc + "- " + item.name + "\n"
+  acc = `${acc} - ${item.name} \n`
+  // acc = acc + "- " + item.name + "\n"
   return acc
 }, '')
 
